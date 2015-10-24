@@ -1,0 +1,237 @@
+$flatWhite: #F9F9F9;
+$flatBlack: #212121;
+$flatBlue: #137bb5;
+$flatGreen: #3cbc8d;
+$flatRed: #e74c3c;
+$flatYellow: #f5d76e;
+
+$large: 1140px;
+$medium: 970px;
+$small: 550px;
+
+:root {
+  font-size: 14px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: $flatBlack;
+  margin: 0;
+  padding: 0;
+  background-color: $flatWhite;
+  &.menu-open:after {
+    content: '';
+    position: absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    background: rgba(0,0,0,0.42);
+    z-index: 997;
+  }
+}
+
+.text-right {
+  text-align: right;
+}
+
+.card--application {
+  position: relative;
+  max-width: 960px;
+  margin: 16px auto;
+  min-height: 420px;
+  border-radius: 2px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.12);
+
+}
+
+.card--application__header {
+  min-height: 104px;
+  background: $flatWhite;
+  padding: 16px 16px 0;
+
+  h4 {
+    display: inline-block;
+    width: 49%;
+
+    &:last-of-type {
+      text-align: right;
+    }
+  }
+
+  .applicant-tabs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+
+  label {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    bottom: -12px;
+    cursor: pointer;
+    margin-bottom: 0;
+  }
+
+  input[type=radio] {
+    visibility: hidden;
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    transition: all .3s ease-in-out;
+
+    &:after {
+      visibility: visible;
+      content: '';
+      position: absolute;
+      height: 4px;
+      width: 0;
+      bottom: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: $flatBlue;
+      transition: all .3s ease-in-out;
+    }
+
+    &:checked:after {
+      width: 100%;
+    }
+
+    &:checked+label {
+      color: $flatBlue;
+      font-weight: bold;
+    }
+  }
+}
+}
+
+.card--application__applicant {
+  display: none;
+  hr {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.applicant-overview {
+  padding: 72px 16px 16px;
+
+  .basic-info {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+    align-items: center;
+    img {
+      width: 112px;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+    > div {
+      flex: 1;
+      text-align: center;
+      @media (min-width: $small) {
+        text-align: left;
+      }
+    }
+    p {
+      margin: 4px;
+      padding: 0;
+    }
+    h4 {
+      margin-bottom: 8px;
+    }
+
+    //query for .basic-info
+    @media (min-width: $small) {
+      margin-bottom: 0;
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  }
+
+  .credit-summary {
+    text-align: center;
+
+    h2 {
+      font-weight: bold;
+    }
+    .good {
+      color: $flatGreen;
+    }
+    .bad {
+      color: $flatRed;
+    }
+    .fine {
+      color: $flatYellow;
+    }
+
+    //query for .applicant__credit-summary
+    @media (min-width: $small) {
+      text-align: right;
+    }
+  }
+
+  // query for .applicant-overview
+  @media (min-width: $medium) {
+    padding: 72px 72px 16px;
+  }
+}
+
+.applicant-section {
+  padding: 16px;
+
+  h4 {
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .label {
+      margin: 2px;
+      font-size: 0.7em;
+      color: lighten($flatBlack, 50%);
+  }
+
+  table {
+    width: 100%;
+    td {
+      padding: 8px;
+      font-size: 14px;
+    }
+  }
+
+  @media (min-width: $medium) {
+    padding: 24px 72px;
+  }
+}
+
+.adverse-items {
+  position: relative;
+  .adverse-items__answers {
+    table {
+      width: 100%;
+    }
+  }
+  .adverse-items__explanation {
+    background: #d2d2d2;
+    padding: 16px;
+    border-radius: 2px;
+    height: 100%;
+  }
+}
+
+@import 'rental-history';
+
+@import 'credit-report';
+
+@import 'sidebar';

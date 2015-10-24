@@ -1,0 +1,75 @@
+.credit-report {
+  table tr td:nth-of-type(2n) {
+    font-weight: bold;
+    text-align: right;
+  }
+}
+
+.credit-account-history {
+  position: relative;
+
+}
+
+.account-title {
+  display: none;
+  @media (min-width: $small) {
+    display: table-cell;
+  }
+}
+
+.accounts-table{
+  ul {
+    list-style: none;
+    margin: 4px;
+    li {
+      display: inline-block;
+    }
+  }
+  thead {
+    font-size: .8em;
+  }
+  td {
+    border-bottom: none;
+  }
+}
+
+.account-history {
+  position: relative;
+  .bar {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-radius: 2px;
+    .month {
+      position: relative;
+      display: table-cell;
+      border-spacing: 0;
+      background: #d3d3d3;
+      border-right: 1px solid $flatWhite;
+      height: 2vh;
+      margin: 0;
+      &:nth-of-type(12n) {
+        border-right: 2px solid $flatBlack;
+      }
+      &.good {
+        background: $flatGreen;
+      }
+      &.late {
+        background: $flatYellow;
+      }
+      &.very-late {
+        background: $flatRed;
+      }
+      &:hover {
+        background: $flatBlack;
+        &:after {
+          content: attr(data-content);
+          position: absolute;
+          bottom: -24px;
+          right: 0;
+        }
+      }
+    }
+  }
+}

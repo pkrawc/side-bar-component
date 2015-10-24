@@ -1,0 +1,35 @@
+.rental-history {
+  background: $flatWhite;
+
+  .rental-history__item {
+    margin: 24px auto;
+  }
+
+  hr:last-of-type {
+    display: none;
+  }
+
+  .reference-status {
+    font-size: 0.9em;
+    font-weight: 600;
+    margin-bottom: 8px;
+    &.recieved {
+      color: $flatGreen;
+    }
+    &.not-recieved {
+      color: $flatBlack;
+    }
+
+    table td.answer {
+      font-weight: 600;
+    }
+  }
+
+  .reference-custom-message {
+    padding: 16px;
+    border-radius: 2px;
+    background: #d2d2d2;
+    min-height: 36px;
+    text-align: left;
+  }
+}

@@ -1,0 +1,117 @@
+.side-menu-button {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 4px;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+  z-index: 999;
+  span {
+    display: block;
+    margin: 4px auto;
+    height: 4px;
+    width: 24px;
+    background: $flatBlack;
+    transition:
+      transform 0.3s ease-in-out,
+      opacity 0.1s ease-in-out,
+      background 0.3s ease-in-out;
+  }
+  &.open {
+    span {
+      transform-origin: center;
+      &:nth-of-type(1) {
+        transform: translate3d(0, 200%, 0) rotate(45deg);
+      }
+      &:nth-of-type(2) {
+        opacity: 0;
+      }
+      &:nth-of-type(3) {
+        transform: translate3d(0, -200%, 0) rotate(-45deg);
+      }
+    }
+  }
+}
+
+
+.side-menu {
+  position: absolute;
+  display: inline-block;
+  min-height: 100vh;
+  width: calc(100% - 52px);
+  max-width: 320px;
+  background: $flatWhite;
+  color: $flatBlack;
+  transition: all .3s ease-in-out;
+  z-index: 998;
+  &.closed {
+    left: -100%;
+  }
+  &.open {
+    left: 0;
+    box-shadow: 3px 0 6px rgba(0,0,0,0.12);
+  }
+  ul {
+    list-style: none;
+  }
+  hr {
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid darken($flatBlue, 30%);
+  }
+}
+.side-menu .__profile-image {
+  height: 112px;
+  width: 112px;
+  margin: 52px auto 16px;
+  background: $flatBlack;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+}
+
+.side-menu .__user-name {
+  text-align: center;
+  margin: 16px 16px;
+  span {
+    color: gold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+  }
+}
+
+.side-menu .__unit-list {
+  > li {
+    padding: 16px;
+    margin-bottom: 0;
+    transition: height 0.3s ease-in-out;
+    a {
+      font-size: 1rem;
+      text-decoration: none;
+      color: $flatBlack;
+    }
+    &.selected {
+      background: rgba(0,0,0,0.12);
+      .unit-menu-items {
+        display: block;
+      }
+    }
+  }
+  .unit-menu-items {
+    display: none;
+    font-size: 0.95rem;
+    a {
+      display: flex;
+      color: $flatBlack;
+      align-items: center;
+    }
+    .icon {
+      display: inline-block;
+      margin-right: 8px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: lighten($flatBlue, 40%);
+    }
+  }
+}

@@ -1,0 +1,173 @@
+:root { font-size: 14px; }
+
+*, *:before, *:after { box-sizing: border-box; }
+
+body { font-family: 'Open Sans', sans-serif; color: #212121; margin: 0; padding: 0; background-color: #F9F9F9; }
+
+body.menu-open:after { content: ''; position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: rgba(0, 0, 0, 0.42); z-index: 997; }
+
+.text-right { text-align: right; }
+
+.card--application { position: relative; max-width: 960px; margin: 16px auto; min-height: 420px; border-radius: 2px; box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12); }
+
+.card--application__header { min-height: 104px; background: #F9F9F9; padding: 16px 16px 0; }
+
+.card--application__header h4 { display: inline-block; width: 49%; }
+
+.card--application__header h4:last-of-type { text-align: right; }
+
+.card--application__header .applicant-tabs { list-style: none; padding: 0; margin: 0; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-justify-content: space-around; -ms-flex-pack: distribute; justify-content: space-around; }
+
+.card--application__header .applicant-tabs label { display: inline-block; position: relative; width: 100%; text-align: center; bottom: -12px; cursor: pointer; margin-bottom: 0; }
+
+.card--application__header .applicant-tabs input[type=radio] { visibility: hidden; display: inline-block; position: relative; margin: 0; width: 100%; text-align: center; transition: all 0.3s ease-in-out; }
+
+.card--application__header .applicant-tabs input[type=radio]:after { visibility: visible; content: ''; position: absolute; height: 4px; width: 0; bottom: -4px; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%); background: #137bb5; transition: all 0.3s ease-in-out; }
+
+.card--application__header .applicant-tabs input[type=radio]:checked:after { width: 100%; }
+
+.card--application__header .applicant-tabs input[type=radio]:checked + label { color: #137bb5; font-weight: bold; }
+
+.card--application__applicant { display: none; }
+
+.card--application__applicant hr { margin: 0; padding: 0; }
+
+.applicant-overview { padding: 72px 16px 16px; }
+
+.applicant-overview .basic-info { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; margin-bottom: 24px; -webkit-align-items: center; -ms-flex-align: center; align-items: center; }
+
+.applicant-overview .basic-info img { width: 112px; border-radius: 50%; margin-right: 8px; }
+
+.applicant-overview .basic-info > div { -webkit-flex: 1; -ms-flex: 1; flex: 1; text-align: center; }
+
+@media (min-width: 550px) { .applicant-overview .basic-info > div { text-align: left; } }
+
+.applicant-overview .basic-info p { margin: 4px; padding: 0; }
+
+.applicant-overview .basic-info h4 { margin-bottom: 8px; }
+
+@media (min-width: 550px) { .applicant-overview .basic-info { margin-bottom: 0; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; -webkit-align-items: flex-start; -ms-flex-align: start; align-items: flex-start; } }
+
+.applicant-overview .credit-summary { text-align: center; }
+
+.applicant-overview .credit-summary h2 { font-weight: bold; }
+
+.applicant-overview .credit-summary .good { color: #3cbc8d; }
+
+.applicant-overview .credit-summary .bad { color: #e74c3c; }
+
+.applicant-overview .credit-summary .fine { color: #f5d76e; }
+
+@media (min-width: 550px) { .applicant-overview .credit-summary { text-align: right; } }
+
+@media (min-width: 970px) { .applicant-overview { padding: 72px 72px 16px; } }
+
+.applicant-section { padding: 16px; }
+
+.applicant-section h4 { text-align: center; font-weight: 600; }
+
+.applicant-section .label { margin: 2px; font-size: 0.7em; color: #a1a1a1; }
+
+.applicant-section table { width: 100%; }
+
+.applicant-section table td { padding: 8px; font-size: 14px; }
+
+@media (min-width: 970px) { .applicant-section { padding: 24px 72px; } }
+
+.adverse-items { position: relative; }
+
+.adverse-items .adverse-items__answers table { width: 100%; }
+
+.adverse-items .adverse-items__explanation { background: #d2d2d2; padding: 16px; border-radius: 2px; height: 100%; }
+
+.rental-history { background: #F9F9F9; }
+
+.rental-history .rental-history__item { margin: 24px auto; }
+
+.rental-history hr:last-of-type { display: none; }
+
+.rental-history .reference-status { font-size: 0.9em; font-weight: 600; margin-bottom: 8px; }
+
+.rental-history .reference-status.recieved { color: #3cbc8d; }
+
+.rental-history .reference-status.not-recieved { color: #212121; }
+
+.rental-history .reference-status table td.answer { font-weight: 600; }
+
+.rental-history .reference-custom-message { padding: 16px; border-radius: 2px; background: #d2d2d2; min-height: 36px; text-align: left; }
+
+.credit-report table tr td:nth-of-type(2n) { font-weight: bold; text-align: right; }
+
+.credit-account-history { position: relative; }
+
+.account-title { display: none; }
+
+@media (min-width: 550px) { .account-title { display: table-cell; } }
+
+.accounts-table ul { list-style: none; margin: 4px; }
+
+.accounts-table ul li { display: inline-block; }
+
+.accounts-table thead { font-size: .8em; }
+
+.accounts-table td { border-bottom: none; }
+
+.account-history { position: relative; }
+
+.account-history .bar { width: 100%; display: table; table-layout: fixed; border-collapse: collapse; border-radius: 2px; }
+
+.account-history .bar .month { position: relative; display: table-cell; border-spacing: 0; background: #d3d3d3; border-right: 1px solid #F9F9F9; height: 2vh; margin: 0; }
+
+.account-history .bar .month:nth-of-type(12n) { border-right: 2px solid #212121; }
+
+.account-history .bar .month.good { background: #3cbc8d; }
+
+.account-history .bar .month.late { background: #f5d76e; }
+
+.account-history .bar .month.very-late { background: #e74c3c; }
+
+.account-history .bar .month:hover { background: #212121; }
+
+.account-history .bar .month:hover:after { content: attr(data-content); position: absolute; bottom: -24px; right: 0; }
+
+.side-menu-button { position: absolute; top: 16px; left: 16px; padding: 4px; cursor: pointer; transition: all 0.3s ease-in-out; z-index: 999; }
+
+.side-menu-button span { display: block; margin: 4px auto; height: 4px; width: 24px; background: #212121; transition: -webkit-transform 0.3s ease-in-out, opacity 0.1s ease-in-out, background 0.3s ease-in-out; transition: transform 0.3s ease-in-out, opacity 0.1s ease-in-out, background 0.3s ease-in-out; }
+
+.side-menu-button.open span { -webkit-transform-origin: center; transform-origin: center; }
+
+.side-menu-button.open span:nth-of-type(1) { -webkit-transform: translate3d(0, 200%, 0) rotate(45deg); transform: translate3d(0, 200%, 0) rotate(45deg); }
+
+.side-menu-button.open span:nth-of-type(2) { opacity: 0; }
+
+.side-menu-button.open span:nth-of-type(3) { -webkit-transform: translate3d(0, -200%, 0) rotate(-45deg); transform: translate3d(0, -200%, 0) rotate(-45deg); }
+
+.side-menu { position: absolute; display: inline-block; min-height: 100vh; width: calc(100% - 52px); max-width: 320px; background: #F9F9F9; color: #212121; transition: all 0.3s ease-in-out; z-index: 998; }
+
+.side-menu.closed { left: -100%; }
+
+.side-menu.open { left: 0; box-shadow: 3px 0 6px rgba(0, 0, 0, 0.12); }
+
+.side-menu ul { list-style: none; }
+
+.side-menu hr { margin: 0; padding: 0; border-top: 1px solid #041d2b; }
+
+.side-menu .__profile-image { height: 112px; width: 112px; margin: 52px auto 16px; background: #212121; background-position: center; background-size: cover; border-radius: 50%; }
+
+.side-menu .__user-name { text-align: center; margin: 16px 16px; }
+
+.side-menu .__user-name span { color: gold; font-size: 0.9rem; text-transform: uppercase; }
+
+.side-menu .__unit-list > li { padding: 16px; margin-bottom: 0; transition: height 0.3s ease-in-out; }
+
+.side-menu .__unit-list > li a { font-size: 1rem; text-decoration: none; color: #212121; }
+
+.side-menu .__unit-list > li.selected { background: rgba(0, 0, 0, 0.12); }
+
+.side-menu .__unit-list > li.selected .unit-menu-items { display: block; }
+
+.side-menu .__unit-list .unit-menu-items { display: none; font-size: 0.95rem; }
+
+.side-menu .__unit-list .unit-menu-items a { display: -webkit-flex; display: -ms-flexbox; display: flex; color: #212121; -webkit-align-items: center; -ms-flex-align: center; align-items: center; }
+
+.side-menu .__unit-list .unit-menu-items .icon { display: inline-block; margin-right: 8px; width: 20px; height: 20px; border-radius: 50%; background-color: #9fd6f5; }
